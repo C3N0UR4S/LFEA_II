@@ -1,0 +1,17 @@
+Ajuste Teórico:
+Parâmetros: const           0.001543
+Osciloscopio    0.000208
+dtype: float64
+Erros dos Parâmetros: const           0.002757
+Osciloscopio    0.000004
+dtype: float64
+R²: 0.9978541136778709
+
+Ajuste Experimental:
+Parâmetros: const           0.155761
+Osciloscopio    0.000261
+dtype: float64
+Erros dos Parâmetros: const           0.044702
+Osciloscopio    0.000030
+dtype: float64
+R²: 0.9276069995759703
