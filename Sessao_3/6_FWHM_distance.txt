@@ -1,0 +1,11 @@
+Linear Fit Parameters:
+Slope (m): -0.04964417327385504 ± 0.04696274593350442
+Intercept (b): 13.639156217979023 ± 0.052539123375605276
+Chi-squared: 0.0004755539591907997
+Degrees of Freedom: 4
+R-squared: 0.155429825259368
+
+Constant Fit Parameters:
+Constant (c): 13.634040055125746 ± 0.05292662559130698
+Chi-squared: 0.0005835343446182822
+Degrees of Freedom: 4
