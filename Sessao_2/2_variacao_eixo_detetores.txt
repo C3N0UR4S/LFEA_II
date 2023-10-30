@@ -1,0 +1,23 @@
+Ajuste A:
+Parâmetros A: [9.53139765e+04 1.70436431e+01]
+Erros dos parâmetros A: [3.13679204e+03 2.55883174e-01]
+R² A: 0.999226790988684
+Qui-quadrado A: 12.755558977338694
+Número de graus de liberdade A: 4
+
+Ajuste B:
+Parâmetros B: [9.76039057e+04 1.76102934e+01]
+Erros dos parâmetros B: [1.90078897e+03 1.57387338e-01]
+R² B: 0.9996217141800167
+Qui-quadrado B: 4.031463217629554
+Número de graus de liberdade B: 4
+
+Interseção dos ajustes: x = -0.18048623349320536
+
+
+Ajuste C:
+Parâmetros B: [ 6.62059400e+04 -2.46520559e+01]
+Erros dos parâmetros B: [1.18210278e+04 2.41520810e+00]
+R² B: 0.9704102658256907
+Qui-quadrado B: 5.97131285570466
+Número de graus de liberdade B: 4
