@@ -1,0 +1,17 @@
+Valores dos parâmetros para 10 µCi em cima:
+a_10: 100.50766352659417
+b_10: 0.49275390226204585
+c_10: -9.14207586268419
+
+Valores dos parâmetros para 5 µCi em cima:
+a_5: 98.09882807885413
+b_5: 1.1525407166206314
+c_5: 9.209487764462722
+
+Qui-quadrado e ndf para 10 µCi em cima:
+Qui-quadrado_10: 4.265416711865152
+ndf_10: 4
+
+Qui-quadrado e ndf para 5 µCi em cima:
+Qui-quadrado_5: 5.8810274653483345
+ndf_5: 4
