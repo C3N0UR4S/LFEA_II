@@ -41,17 +41,7 @@ Rc_fit_C = ajuste_C(y_fit_C, *params_C)
 inter = (params_A[1]+params_B[1])/(np.sqrt(params_A[0]/params_B[0])+1)-params_B[1]
 
 
-# Plotando os dados experimentais e os ajustes
-plt.errorbar(y, Ra, yerr=eRa, label=f'$R_a$', capsize=2, ecolor='red', fmt='.', markersize=0.5)
-plt.plot(y_fit_A, Ra_fit_A, 'r-', label=f'Ajuste $R_a$')
-plt.errorbar(y, Rb, yerr=eRb, label=f'$R_b$', capsize=2, ecolor='green', fmt='.', markersize=0.5)
-plt.plot(y_fit_B, Rb_fit_B, 'g-', label=f'Ajuste $R_b$')
-plt.axvline(x = inter, color='pink', linestyle='--')
-plt.xlabel('y [cm]')
-plt.ylabel(f'$R_i$ [1/s]')
-plt.legend()
-plt.grid(True)
-plt.show()
+
 
 # Obtendo os erros dos parâmetros ajustados
 errors_A = np.sqrt(np.diag(covariance_A))
@@ -100,9 +90,16 @@ print(f'Interseção dos ajustes: x = {inter} ')
 
 inter = (params_A[1]+params_B[1])/(np.sqrt(params_A[0]/params_B[0])+1)-params_B[1]
 
+# Plotando os dados experimentais e os ajustes
+plt.errorbar(y, Ra, yerr=eRa, label=f'$R_a$', capsize=2, ecolor='red', fmt='.', markersize=0.5)
+plt.plot(y_fit_A, Ra_fit_A, 'r-', label=f'Ajuste $R_a$')
+plt.errorbar(y, Rb, yerr=eRb, label=f'$R_b$', capsize=2, ecolor='green', fmt='.', markersize=0.5)
+plt.plot(y_fit_B, Rb_fit_B, 'g-', label=f'Ajuste $R_b$')
+plt.axvline(x = inter, color='pink', linestyle='--')
 
 plt.errorbar(y, Rc, yerr= eRc,  label=f'$R_c$', capsize=2, ecolor='orange', fmt='.', markersize=0.5)
 plt.plot(y_fit_C, Rc_fit_C, 'g-', label=f'Ajuste $R_c$')
+
 plt.xlabel('y [cm]')
 plt.ylabel(f'$R_i$ [1/s]')
 plt.legend()

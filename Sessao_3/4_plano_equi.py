@@ -12,6 +12,8 @@ x_1_theta, x_1_Rc, x_1_Rc_err = dados['theta [graus]'][32:42], dados['Rc corr'][
 x_2_theta, x_2_Rc, x_2_Rc_err = dados['theta [graus]'][42:52], dados['Rc corr'][42:52], dados['eRc corr'][42:52]
 x_3_theta, x_3_Rc, x_3_Rc_err = dados['theta [graus]'][52:], dados['Rc corr'][52:], dados['eRc corr'][52:]
 
+theta_err = 0.52
+
 def gaussian(x, A, mu, sigma):
     return A * np.exp(-(x - mu)**2 / (2 * sigma**2))
 
@@ -24,12 +26,12 @@ params_x3, covariance_x3 = curve_fit(gaussian, x_3_theta, x_3_Rc, sigma=x_3_Rc_e
 
 x_values = np.linspace(min(_3_x_theta), max(x_3_theta), 1000)
 
-plt.errorbar(_3_x_theta, _3_x_Rc, yerr = _3_x_Rc_err, color = 'black', capsize = 2,fmt='.', ecolor='black', markersize=0.5 )
-plt.errorbar(_2_x_theta, _2_x_Rc, yerr = _2_x_Rc_err,  color = 'red', capsize = 2,fmt='.', ecolor='red', markersize=0.5 )
-plt.errorbar(_1_x_theta, _1_x_Rc, yerr = _1_x_Rc_err,  color = 'green', capsize = 2,fmt='.', ecolor='green', markersize=0.5 )
-plt.errorbar(x_1_theta, x_1_Rc, yerr = x_1_Rc_err,  color = 'blue', capsize = 2,fmt='.', ecolor='blue', markersize=0.5 )
-plt.errorbar(x_2_theta, x_2_Rc, yerr = x_2_Rc_err,  color = 'brown', capsize = 2,fmt='.', ecolor='brown', markersize=0.5 )
-plt.errorbar(x_3_theta, x_3_Rc, yerr = x_3_Rc_err, color = 'pink', capsize = 2,fmt='.', ecolor='pink', markersize=0.5 )
+plt.errorbar(_3_x_theta, _3_x_Rc, xerr=0.52, yerr = _3_x_Rc_err, color = 'black', capsize = 2,fmt='.', ecolor='black', markersize=0.5 )
+plt.errorbar(_2_x_theta, _2_x_Rc, xerr=0.52, yerr = _2_x_Rc_err,  color = 'red', capsize = 2,fmt='.', ecolor='red', markersize=0.5 )
+plt.errorbar(_1_x_theta, _1_x_Rc, xerr=0.52, yerr = _1_x_Rc_err,  color = 'green', capsize = 2,fmt='.', ecolor='green', markersize=0.5 )
+plt.errorbar(x_1_theta, x_1_Rc, xerr=0.52, yerr = x_1_Rc_err,  color = 'blue', capsize = 2,fmt='.', ecolor='blue', markersize=0.5 )
+plt.errorbar(x_2_theta, x_2_Rc, xerr=0.52, yerr = x_2_Rc_err,  color = 'brown', capsize = 2,fmt='.', ecolor='brown', markersize=0.5 )
+plt.errorbar(x_3_theta, x_3_Rc, xerr=0.52, yerr = x_3_Rc_err, color = 'pink', capsize = 2,fmt='.', ecolor='pink', markersize=0.5 )
 plt.plot(x_values, gaussian(x_values, *params_3), label='x = -1.5', color='black')
 plt.plot(x_values, gaussian(x_values, *params_2), label='x = -1.0', color='red')
 plt.plot(x_values, gaussian(x_values, *params_1), label='x = -0.5', color='green')
@@ -57,7 +59,7 @@ r2_x3 = r_squared(x_3_Rc, gaussian(x_3_theta, *params_x3))
 
 def chi_squared(data, fit, errors, num_params):
     residuals = data - fit
-    chi2 = np.sum((residuals / errors) ** 2)
+    chi2 = np.sum((residuals / data) ** 2)
     ndf = len(data) - num_params  # Graus de liberdade
     return chi2, ndf
 

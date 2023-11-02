@@ -18,7 +18,7 @@ err_Rc = dados['incerteza Rc [1/s]']
 # Define custom weights based on the uncertainties in both variables
 weights = 1 / (err_Rc * err_Rc + err_oscilo * err_oscilo)
 
-parametros_iniciais = [-100, 0.35, 132, 100]
+parametros_iniciais = [100, -0.35, 132, 0]
 
 params_sigmoid, params_covariance_sigmoid = curve_fit(sigmoid, oscilo, Rc, p0=parametros_iniciais, sigma=weights, maxfev=2000)
 

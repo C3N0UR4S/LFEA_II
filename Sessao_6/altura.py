@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
+import uncertainties as unc
+from uncertainties import unumpy as unp
 
 def gaussian(x, a, b, c):
     return a * np.exp(-((x - b)**2) / (2 * c**2))
@@ -67,3 +69,16 @@ print(f"Qui-quadrado_5: {chi_squared_5}")
 print(f"ndf_5: {ndf_5}")
 
 
+# Converta os parâmetros em números incertos
+params_10_unc = unc.correlated_values(params_10, covariance_10)
+params_5_unc = unc.correlated_values(params_5, covariance_5)
+
+# Imprima os resultados com duas casas decimais
+print("Valores dos parâmetros para 10 µCi em cima:")
+print(f"a_10: {params_10_unc[0].nominal_value:.2f} ± {params_10_unc[0].std_dev:.2f}")
+print(f"b_10: {params_10_unc[1].nominal_value:.2f} ± {params_10_unc[1].std_dev:.2f}")
+print(f"c_10: {params_10_unc[2].nominal_value:.2f} ± {params_10_unc[2].std_dev:.2f}")
+print("\nValores dos parâmetros para 5 µCi em cima:")
+print(f"a_5: {params_5_unc[0].nominal_value:.2f} ± {params_5_unc[0].std_dev:.2f}")
+print(f"b_5: {params_5_unc[1].nominal_value:.2f} ± {params_5_unc[1].std_dev:.2f}")
+print(f"c_5: {params_5_unc[2].nominal_value:.2f} ± {params_5_unc[2].std_dev:.2f}")

@@ -22,7 +22,7 @@ A, mu, sigma = param_otim
 err_A, err_mu, err_sigma = np.sqrt(np.diag(cov))
 
 # Calcular o qui-quadrado e o grau de liberdade
-chi2 = np.sum(((r_corr - gauss(theta, A, mu, sigma)) / e_r_corr) ** 2)
+chi2 = np.sum(((r_corr - gauss(theta, A, mu, sigma)) / r_corr) ** 2)
 ndf = len(theta) - len(param_ini)  # Grau de liberdade
 
 # Calcular o coeficiente de determinação (R²)

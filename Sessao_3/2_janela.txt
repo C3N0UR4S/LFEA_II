@@ -1,6 +1,6 @@
 y=a/(1+exp(b(x-c)))+d
-Parâmetros ajustados (sigmoid): [-99.56166983   0.40315953 131.7128358  100.34832159]
-Erros dos parâmetros (sigmoid): [2.88219293 0.05594533 0.42017288 1.65032353]
+Parâmetros ajustados (sigmoid): [ 99.5616696   -0.40315953 131.71283581   0.78665198]
+Erros dos parâmetros (sigmoid): [2.88219248 0.05594533 0.42017291 2.27584985]
 Chi-squared ($\chi^2$) (sigmoid): 1.1881
 Degrees of Freedom (ndf) (sigmoid): 9
 Coefficient of Determination ($R^2$) (sigmoid): 0.9949
